@@ -8,16 +8,46 @@
 </head>
 <body>
     <tt>my online font storage. powered by github codespaces</tt>
+    <textarea id="genfontchange" onchange="updatedos"></textarea>
+    <p class="dos" id="dos">Microsoft DOS Font.</p>
+    <p class="winold" id="winold">Microsoft Windows 95 Font. (MS SANS)</p>
+    <p class="depop" id="depop">Depop</p>
+    <br>
+    <a href="https://aghastmuffin.github.io/extrafonts/ModernDOS8x14.ttf"><button >Download DOSFONT</button></a>
+    <a href="https://aghastmuffin.github.io/extrafonts/MS-Sans-Serif.ttf"><button >Download MS-SANS-SERIF</button></a>
+    <a href="https://aghastmuffin.github.io/extrafonts/GT-America-LCGV-Extended-Black.ttf"><button >Download GT-America</button></a>
     <p class="dos">Powered by Github Pages</p>
 <style>
 @font-face{
     font-family: DOS8x14;
     src: url(https://aghastmuffin.github.io/extrafonts/ModernDOS8x14.ttf);
 }
-.dos{
-    font-family: DOS8x14
+@font-face{
+    font-family: SansSerifMs;
+    src: url(https://aghastmuffin.github.io/extrafonts/MS-Sans-Serif.ttf);
 }
+@font-face{
+    font-family: GTAMERICA;
+    src: url(https://aghastmuffin.github.io/extrafonts/GT-America-LCGV-Extended-Black.ttf);
+}
+.dos{
+    font-family: DOS8x14;
+}
+.winold{
+    font-family: SansSerifMs;
+}
+.depop{
+    font-family: GTAMERICA;
 }
 </style>
+<script>
+function updatedos(){
+    let newtxt = document.getElementById("genfontchange").value;
+    document.getElementById("dos").innerHTML = newtxt;
+    document.getElementById("winold").innerHTML = newtxt;
+    document.getElementById("depop").innerHTML = newtxt;
+
+}
+</script>
 </body>
 </html>
