@@ -12,11 +12,13 @@
     <p class="dos" id="dos">Microsoft DOS Font.</p>
     <p class="winold" id="winold">Microsoft Windows 95 Font. (MS SANS)</p>
     <p class="depop" id="depop">Depop</p>
+    <p class="Anurati" id="Anurati-Regular">ANURATI-REGULAR</p>
     <br>
     <a href="https://aghastmuffin.github.io/extrafonts/ModernDOS8x14.ttf"><button >Download DOSFONT</button></a>
     <a href="https://aghastmuffin.github.io/extrafonts/MS-Sans-Serif.ttf"><button >Download MS-SANS-SERIF</button></a>
     <a href="https://aghastmuffin.github.io/extrafonts/GT-America-LCGV-Extended-Black.ttf"><button >Download GT-America</button></a>
-    <p class="dos">Powered by Github Pages (1.1)</p>
+    <a href="https://aghastmuffin.github.io/extrafonts/Anurati-Regular.ttf"><button>Download Anurati-Regular</button></a>
+    <p class="dos">Powered by Github Pages (1.2), DOTMATRIXNEXT</p>
 <style>
 @font-face{
     font-family: DOS8x14;
@@ -30,6 +32,13 @@
     font-family: GTAMERICA;
     src: url(https://aghastmuffin.github.io/extrafonts/GT-America-LCGV-Extended-Black.ttf);
 }
+@font-face{
+    font-family: Anurati; /* uppercase only */
+    src: url(https://aghastmuffin.github.io/aghastmuffin/extrafonts/Anurati-Regular.ttf);
+}
+.Anurati{
+    font-family: Anurati;
+}
 .dos{
     font-family: DOS8x14;
 }
@@ -39,6 +48,7 @@
 .depop{
     font-family: GTAMERICA;
 }
+
 </style>
 <script>
 function updatedos(){
@@ -46,6 +56,7 @@ function updatedos(){
     document.getElementById("dos").innerHTML = newtxt;
     document.getElementById("winold").innerHTML = newtxt;
     document.getElementById("depop").innerHTML = newtxt;
+    document.getElementById("Anurati").innerHTML = newtxt.toUpperCase();
 
 }
 </script>
