@@ -7,18 +7,23 @@
     <title>Extrafonts</title>
 </head>
 <body>
-    <tt>my online font storage. powered by github codespaces</tt> <br>
+    <h1>Aghastmuffin's font vault</h1>
+    <tt>A font storage for obscure hard to find fonts, in most formats</tt> 
+    <br>
     <textarea id="genfontchange" onchange="updatedos()"></textarea>
     <p class="dos" id="dos">Microsoft DOS Font.</p>
     <p class="winold" id="winold">Microsoft Windows 95 Font. (MS SANS)</p>
     <p class="depop" id="depop">Depop</p>
     <p class="Anurati" id="Anurati-Regular">ANURATI-REGULAR</p>
+    <p class="trip-sans">TRIP SANS!</p>
     <br>
     <a href="https://aghastmuffin.github.io/extrafonts/ModernDOS8x14.ttf"><button >Download DOSFONT</button></a>
     <a href="https://aghastmuffin.github.io/extrafonts/MS-Sans-Serif.ttf"><button >Download MS-SANS-SERIF</button></a>
     <a href="https://aghastmuffin.github.io/extrafonts/GT-America-LCGV-Extended-Black.ttf"><button >Download GT-America</button></a>
     <a href="https://aghastmuffin.github.io/extrafonts/Anurati-Regular.ttf"><button>Download Anurati-Regular</button></a>
-    <p class="dos">Powered by Github Pages (1.2), DOTMATRIXNEXT</p>
+    <a href=""><button>Download TripSans</button></a>
+    <p class="dos">Powered by Github Pages (1.5)</p>
+    <p>Fonts are distributed free of charge, however some may be pirated, as it was hard to trace original source. Use at your own discretion. Personal projects should be fine, though.</p>
 <style>
 @font-face{
     font-family: DOS8x14;
@@ -35,6 +40,14 @@
 @font-face{
     font-family: Anurati; /* uppercase only */
     src: url(https://aghastmuffin.github.io/aghastmuffin/extrafonts/Anurati-Regular.ttf);
+}
+@font-face{
+    font-family: trip-sans;
+    src: url("https://aghastmuffin.github.io/extrafonts/TripSans-Medium.ttf");
+}
+.trip-sans{
+    /*medium*/
+    font-family: trip-sans;
 }
 .Anurati{
     font-family: Anurati;
