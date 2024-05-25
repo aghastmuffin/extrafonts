@@ -10,18 +10,18 @@
     <h1>Aghastmuffin's font vault</h1>
     <tt>A font storage for obscure hard to find fonts, in most formats</tt> 
     <br>
-    <textarea id="genfontchange" onchange="updatedos()"></textarea>
-    <p class="dos" id="dos">Microsoft DOS Font.</p>
-    <p class="winold" id="winold">Microsoft Windows 95 Font. (MS SANS)</p>
-    <p class="depop" id="depop">Depop</p>
-    <p class="Anurati" id="Anurati-Regular">ANURATI-REGULAR</p>
-    <p class="trip-sans">TRIP SANS!</p>
+    <input type="text" id="genfontchange" onchange="updatedos()">
+    <p class="dos font" id="dos">Microsoft DOS Font.</p>
+    <p class="winold font" id="winold">Microsoft Windows 95 Font. (MS SANS)</p>
+    <p class="depop font" id="depop">Depop</p>
+    <p class="Anurati font" id="Anurati-Regular">ANURATI-REGULAR</p>
+    <p class="trip-sans font" id="trippy">TRIP SANS!</p>
     <br>
     <a href="https://aghastmuffin.github.io/extrafonts/ModernDOS8x14.ttf"><button >Download DOSFONT</button></a>
     <a href="https://aghastmuffin.github.io/extrafonts/MS-Sans-Serif.ttf"><button >Download MS-SANS-SERIF</button></a>
     <a href="https://aghastmuffin.github.io/extrafonts/GT-America-LCGV-Extended-Black.ttf"><button >Download GT-America</button></a>
     <a href="https://aghastmuffin.github.io/extrafonts/Anurati-Regular.ttf"><button>Download Anurati-Regular</button></a>
-    <a href=""><button>Download TripSans</button></a>
+    <a href="https://https://aghastmuffin.github.io/extrafonts/trip-sans.zip"><button>Download TripSans</button></a>
     <p class="dos">Powered by Github Pages (1.5)</p>
     <p>Fonts are distributed free of charge, however some may be pirated, as it was hard to trace original source. Use at your own discretion. Personal projects should be fine, though.</p>
 <style>
@@ -64,13 +64,18 @@
 
 </style>
 <script>
-function updatedos(){
+/*function updatedos(){
     let newtxt = document.getElementById("genfontchange").value;
     document.getElementById("dos").innerHTML = newtxt;
     document.getElementById("winold").innerHTML = newtxt;
     document.getElementById("depop").innerHTML = newtxt;
     document.getElementById("Anurati").innerText = newtxt.toUpperCase();
-
+}*/
+function updatedos(){
+        const a = document.getElementsByClassName("font");
+        for (let i = 0; i < a.length; i++) {
+            a[i].innerText = document.getElementById("genfontchange").value;
+        }
 }
 </script>
 </body>
