@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Preview and Download</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #fontPreview {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        #downloadLink {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Upload a TrueType Font File (.ttf)</h2>
+    <input type="file" id="fontInput" accept=".ttf">
+    
+    <h2>Preview Text</h2>
+    <input type="text" id="previewText" placeholder="Enter text to preview">
+    
+    <div id="fontPreview"></div>
+    
+    <a href="#" id="downloadLink" download="preview.txt">Download Preview Text</a>
+    
+    <script>
+        document.getElementById('fontInput').addEventListener('change', function() {
+            var file = this.files[0];
+            var reader = new FileReader();
+            
+            reader.onload = function(event) {
+                var fontUrl = event.target.result;
+                
+                var newStyle = document.createElement('style');
+                newStyle.appendChild(document.createTextNode(
+                    "@font-face { font-family: 'uploadedFont'; src: url('" + fontUrl + "'); }"
+                ));
+                document.head.appendChild(newStyle);
+                
+                document.getElementById('fontPreview').style.fontFamily = 'uploadedFont';
+                updatePreviewText();
+            };
+            
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        });
+        
+        document.getElementById('previewText').addEventListener('input', function() {
+            updatePreviewText();
+        });
+        
+        function updatePreviewText() {
+            var previewText = document.getElementById('previewText').value;
+            document.getElementById('fontPreview').textContent = previewText;
+            
+            // Create a blob with the preview text
+            var blob = new Blob([previewText], { type: 'text/plain' });
+            var url = URL.createObjectURL(blob);
+            
+            // Update download link
+            var downloadLink = document.getElementById('downloadLink');
+            downloadLink.href = url;
+            downloadLink.style.display = 'inline-block';
+        }
+    </script>
+</body>
+</html>
